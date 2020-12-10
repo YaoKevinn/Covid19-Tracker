@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Needed Libraries 
+
+npm install @material-ui/core
+npm i react-chartjs-2 chart.js
+npm i react-leaflet
+npm i leaflet
+
 ## Available Scripts
 
 In the project directory, you can run:
