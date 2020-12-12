@@ -36,6 +36,7 @@ function App() {
 
   useEffect(() => {
       // Code inside here will run once when the component loads and not again
+      // 
       const getCountriesData = async () => {
           await fetch("https://disease.sh/v3/covid-19/countries")
           .then( (res) => res.json())
@@ -74,6 +75,11 @@ function App() {
           setMapCenter([data.countryInfo.lat, data.countryInfo.long]);
           setMapZoom(4);
           mapReRender();
+          const fecha = data.updated;
+          const date = new Date(fecha);
+          console.log(date);
+          console.log(date.toLocaleDateString());
+          
       })
       .catch( err => console.log("Fetch Country Code Failed...", err))
   }

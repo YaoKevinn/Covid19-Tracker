@@ -1,6 +1,6 @@
 {
   "name": "covid-19-tracker",
-  "homepage": "https://YaoKevinn.github.io/Covid19-Tracker",
+  "homepage": "http://YaoKevinn.github.io/Covid19-Tracker",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
