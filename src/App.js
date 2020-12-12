@@ -65,7 +65,7 @@ function App() {
 
       const url = countryCode === "worldwide" 
       ? "https://disease.sh/v3/covid-19/all" 
-      : `https://disease.sh/v3/covid-19/countries/${countryCode}`;
+      : `https://disease.sh/v3/covid-19/countries/${countryCode}?yesterday=true&strict=true`;
 
       await fetch(url)
       .then( res => res.json())
@@ -77,11 +77,12 @@ function App() {
           mapReRender();
           const fecha = data.updated;
           const date = new Date(fecha);
-          console.log(date);
+          console.log(data);
           console.log(date.toLocaleDateString());
           
       })
       .catch( err => console.log("Fetch Country Code Failed...", err))
+
   }
 
   const mapReRender = () => {
@@ -102,8 +103,8 @@ function App() {
                     >
                         <MenuItem value="worldwide">Worldwide</MenuItem>
                         {
-                          countries.map(country => (
-                          <MenuItem value={country.value}>{country.name}</MenuItem>
+                          countries.map((country, index) => (
+                          <MenuItem key={index} value={country.value}>{country.name}</MenuItem>
                           ))
                         }
                     </Select>
@@ -136,8 +137,9 @@ function App() {
                     title="Deaths" 
                     cases={prettyPrintStat(countryInfo.todayDeaths)} 
                     total={prettyPrintStat(countryInfo.deaths)} 
-                />  
+                /> 
             </div>
+            
             
             {
               mapRender ?　

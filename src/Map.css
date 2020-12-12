@@ -35,3 +35,10 @@
     font-weight: bold;
     color: #555;
 }
+
+@media (max-width: 990px) {
+    map{
+        width: 100% !important;
+    }
+ 
+ }
